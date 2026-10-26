@@ -64,7 +64,7 @@ const ART = {
       <rect x="120" y="190" width="160" height="215" rx="22" fill="#fff" opacity=".55"/>
       <rect x="128" y="250" width="144" height="148" rx="16" fill="${p.d === '#ffffff' ? '#f4ead8' : '#f7efe2'}"/>
       <rect x="120" y="290" width="160" height="62" fill="${p.a}"/>
-      <text x="200" y="328" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#fff">Mohira</text>
+      <text x="200" y="328" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#fff">WomenBiz</text>
       <path d="M200 250 v-28" stroke="#3a2a20" stroke-width="4"/>
       <path d="M200 160 c18 26 22 44 0 64 c-22 -20 -18 -38 0 -64z" fill="${p.c}"/>
       <path d="M200 186 c8 14 9 24 0 34 c-9 -10 -8 -20 0 -34z" fill="#fff4c2"/>

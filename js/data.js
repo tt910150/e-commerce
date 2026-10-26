@@ -1,4 +1,4 @@
-/* Mohira — platforma ma'lumotlari.
+/* WomenBiz — platforma ma'lumotlari.
    Haqiqiy backend ulanganda shu massivlar API javobi bilan almashtiriladi. */
 
 const CATEGORIES = [
@@ -85,7 +85,7 @@ const GRANTS = [
     text: "Uyda ishlayotgan va kamida 3 oy platformada sotgan ayollar uchun. Mablag' uskuna va xomashyoga beriladi, qaytarilmaydi." },
   { title: "Qishloq ayollari tashabbusi", sum: 25000000, deadline: "2026-12-15", from: "Viloyat hokimligi dasturi",
     text: "Tuman va qishloqlarda 2 va undan ortiq ayolni ishga oladigan kichik ustaxonalar uchun. Hisobot har chorakda topshiriladi." },
-  { title: "Yosh dizaynerlar tanlovi", sum: 8000000, deadline: "2027-01-31", from: "Mohira va hamkor brendlar",
+  { title: "Yosh dizaynerlar tanlovi", sum: 8000000, deadline: "2027-01-31", from: "WomenBiz va hamkor brendlar",
     text: "Milliy naqshni zamonaviy mahsulotda qo'llagan eng yaxshi 10 ta ish taqdirlanadi va katalog bosh sahifasiga chiqadi." }
 ];
 

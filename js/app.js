@@ -1,4 +1,4 @@
-/* Mohira — sahifa mantiqi */
+/* WomenBiz — sahifa mantiqi */
 (() => {
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -14,8 +14,8 @@
 
   /* xavfsiz localStorage */
   const store = {
-    get(k, d) { try { const v = localStorage.getItem("mohira:" + k); return v ? JSON.parse(v) : d; } catch { return d; } },
-    set(k, v) { try { localStorage.setItem("mohira:" + k, JSON.stringify(v)); } catch {} }
+    get(k, d) { try { const v = localStorage.getItem("womenbiz:" + k); return v ? JSON.parse(v) : d; } catch { return d; } },
+    set(k, v) { try { localStorage.setItem("womenbiz:" + k, JSON.stringify(v)); } catch {} }
   };
 
   const toast = (msg) => {
