@@ -5,6 +5,11 @@
   const som = (n) => Math.round(n).toLocaleString("ru-RU").replace(/ /g, " ") + " so'm";
   const makerOf = (id) => MAKERS.find((m) => m.id === id);
   const catName = (id) => CATEGORIES.find((c) => c.id === id)?.name || "";
+  /* surat; yuklanmasa SVG illyustratsiyaga qaytadi */
+  window.__artFallback = (img) => { const id = +img.dataset.pid; const p = PRODUCTS.find((x) => x.id === id); img.outerHTML = productArt(p); };
+  const pic = (p, w = 800, alt = "") => p.image
+    ? `<img src="${p.image.replace(/w=\d+/, "w=" + w)}" alt="${alt}" loading="lazy" decoding="async" data-pid="${p.id}" onerror="__artFallback(this)">`
+    : productArt(p);
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
   /* xavfsiz localStorage */
@@ -68,7 +73,7 @@
     const m = makerOf(p.maker);
     const badge = p.added <= 4 ? `<span class="card__badge card__badge--new">Yangi</span>` : p.pop >= 95 ? `<span class="card__badge">Ko'p sotilgan</span>` : "";
     return `<button class="card" data-id="${p.id}" aria-label="${esc(p.title)}, ${som(p.price)}">
-      <div class="card__art">${p.image ? `<img src="${esc(p.image)}" alt="" loading="lazy">` : productArt(p)}${badge}</div>
+      <div class="card__art">${pic(p, 600)}${badge}</div>
       <div class="card__body">
         <div class="card__title">${esc(p.title)}</div>
         <div class="card__maker">${esc(m.name)}, ${esc(m.city)}</div>
@@ -94,7 +99,7 @@
     const p = PRODUCTS.find((x) => x.id === id), m = makerOf(p.maker);
     let qty = 1;
     $("#pmBody").innerHTML = `
-      <div class="pm__art">${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.title)}">` : productArt(p)}</div>
+      <div class="pm__art">${pic(p, 1000, esc(p.title))}</div>
       <div class="pm__info">
         <span class="pm__cat">${catName(p.cat)}</span>
         <h2 id="pmTitle">${esc(p.title)}</h2>
@@ -148,7 +153,7 @@
     body.innerHTML = cart.map((l) => {
       const p = PRODUCTS.find((x) => x.id === l.id), m = makerOf(p.maker);
       return `<div class="line">
-        <div class="line__art">${productArt(p)}</div>
+        <div class="line__art">${pic(p, 160)}</div>
         <div><div class="line__title">${esc(p.title)}</div><div class="line__meta">${esc(m.name)}</div>
           <div class="qty" style="margin-top:6px"><button data-dec="${p.id}" aria-label="Kamaytirish">−</button><span>${l.qty}</span><button data-inc="${p.id}" aria-label="Ko'paytirish">+</button></div></div>
         <div class="line__right"><b>${som(p.price * l.qty)}</b><button class="line__remove" data-rm="${p.id}">Olib tashlash</button></div>

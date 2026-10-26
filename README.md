@@ -21,8 +21,8 @@ js/art.js       mahsulotlar uchun SVG illyustratsiyalar
 js/app.js       katalog, savat, kalkulyator, formalar
 ```
 
-## Mahsulotga haqiqiy rasm qo'yish
-Rasmni `images/` papkasiga joylang va `js/data.js` dagi mahsulotga `image` maydonini qo'shing:
+## Mahsulot suratlari
+Hozir suratlar Unsplash'dan (bepul litsenziya) olingan. Surat yuklanmasa, avtomatik ravishda chizilgan illyustratsiya ko'rsatiladi. O'zingizning suratlaringizni qo'yish uchun rasmni `images/` papkasiga joylang va `js/data.js` dagi mahsulotga `image` maydonini qo'shing:
 ```js
 { id: 1, ..., image: "images/atlas-sumka.jpg" }
 ```
