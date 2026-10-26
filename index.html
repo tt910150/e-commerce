@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mohira — ayollar qo'l mehnati bozori</title>
+  <meta name="description" content="Mohira — O'zbekistondagi hunarmand ayollar uchun onlayn platforma: qo'l mehnati buyumlarini sotish, imtiyozli kreditlar, grantlar, bepul darslar va mentorlar.">
+  <meta property="og:title" content="Mohira — ayollar qo'l mehnati bozori">
+  <meta property="og:description" content="Rasmlar, dekor, uy shirinliklari, tikuvchilik, handmade sumka, sham va bijuteriya — hunarmand ayollardan to'g'ridan-to'g'ri.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#katalog">Katalogga o'tish</a>
+
+  <header class="top" id="top">
+    <div class="wrap top__in">
+      <a class="logo" href="#top" aria-label="Mohira bosh sahifa">
+        <span class="logo__mark" aria-hidden="true"></span>
+        <span class="logo__word">Mohira</span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Asosiy menyu">
+        <a href="#katalog">Katalog</a>
+        <a href="#ustalar">Ustalar</a>
+        <a href="#moliya">Moliyalashtirish</a>
+        <a href="#mentorlar">Mentorlar</a>
+        <a href="#sotuvchi" class="nav__seller">Sotuvchi bo'lish</a>
+      </nav>
+      <div class="top__actions">
+        <button class="cart-btn" id="cartOpen" aria-label="Savatni ochish">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h13l-1.5 8.5a2 2 0 0 1-2 1.5H9.4a2 2 0 0 1-2-1.6L5 4H2.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20.5" r="1.3" fill="currentColor"/><circle cx="16.5" cy="20.5" r="1.3" fill="currentColor"/></svg>
+          <span>Savat</span>
+          <b class="cart-btn__count" id="cartCount">0</b>
+        </button>
+        <button class="burger" id="burger" aria-label="Menyuni ochish" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero__in">
+        <div class="hero__text">
+          <p class="hero__kicker">Qashqadaryodan butun O'zbekistonga</p>
+          <h1>Qo'lingiz yaratgan narsa o'z xaridorini topadi</h1>
+          <p class="hero__lead">Mohira — uyda ishlab, qo'l mehnati bilan daromad qilayotgan ayollar uchun bozor. Bu yerda buyumingizni sotasiz, boshlang'ich kapital uchun kredit va grant topasiz, marketing va moliya bo'yicha mentordan maslahat olasiz.</p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#katalog">Katalogni ko'rish</a>
+            <a class="btn btn--ghost" href="#sotuvchi">Mahsulot sotishni boshlash</a>
+          </div>
+          <dl class="hero__facts">
+            <div><dt id="statMakers">0</dt><dd>hunarmand ayol</dd></div>
+            <div><dt id="statItems">0</dt><dd>buyum sotuvda</dd></div>
+            <div><dt>0%</dt><dd>birinchi 3 oy komissiya</dd></div>
+          </dl>
+        </div>
+        <div class="hero__art" aria-hidden="true">
+          <svg id="heroRosette" viewBox="0 0 500 500"></svg>
+        </div>
+      </div>
+      <div class="ikat" aria-hidden="true"></div>
+    </section>
+
+    <!-- KATALOG -->
+    <section class="section" id="katalog">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Katalog</h2>
+          <p>Har bir buyum bitta nusxada yoki kichik partiyada qo'lda yasalgan. Buyurtma to'g'ridan-to'g'ri ustaga boradi.</p>
+        </div>
+
+        <div class="filters">
+          <div class="chips" role="tablist" aria-label="Kategoriyalar" id="chips"></div>
+          <div class="filters__tools">
+            <label class="search">
+              <span class="sr">Qidirish</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              <input type="search" id="search" placeholder="Masalan: sham, atlas, chak-chak">
+            </label>
+            <label class="select">
+              <span class="sr">Saralash</span>
+              <select id="sort">
+                <option value="popular">Ommabop</option>
+                <option value="cheap">Avval arzonlari</option>
+                <option value="expensive">Avval qimmatlari</option>
+                <option value="new">Yangi qo'shilganlar</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="grid" id="grid" aria-live="polite"></div>
+        <p class="empty" id="empty" hidden>Bu so'rov bo'yicha buyum topilmadi. Boshqa so'z bilan qidiring yoki "Hammasi" kategoriyasini tanlang.</p>
+      </div>
+    </section>
+
+    <!-- USTALAR -->
+    <section class="section section--tint" id="ustalar">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Platformadagi ustalar</h2>
+          <p>Har bir ustaning o'z sahifasi, reytingi va buyurtmalar tarixi bor. Xaridor kimdan sotib olayotganini biladi.</p>
+        </div>
+        <div class="makers" id="makers"></div>
+      </div>
+    </section>
+
+    <!-- MOLIYA -->
+    <section class="section" id="moliya">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Moliyalashtirish imkoniyatlari</h2>
+          <p>Ishni kengaytirish uchun pul yoki bilim kerak bo'lsa — uchta yo'l bor. Arizani shu yerdan yuborasiz, biz hamkor tashkilotga yetkazamiz va holatini kuzatib borasiz.</p>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Moliyalashtirish turlari">
+          <button role="tab" class="tab is-active" aria-selected="true" aria-controls="p-kredit" id="t-kredit">Imtiyozli kreditlar</button>
+          <button role="tab" class="tab" aria-selected="false" aria-controls="p-dars" id="t-dars" tabindex="-1">Bepul darslar</button>
+          <button role="tab" class="tab" aria-selected="false" aria-controls="p-grant" id="t-grant" tabindex="-1">Grantlar</button>
+        </div>
+
+        <!-- Kredit -->
+        <div class="panel" role="tabpanel" id="p-kredit" aria-labelledby="t-kredit">
+          <div class="loan">
+            <div class="loan__offers" id="loanOffers"></div>
+            <form class="calc" id="calc" aria-labelledby="calcTitle">
+              <h3 id="calcTitle">Oylik to'lovni hisoblang</h3>
+              <label>Kredit summasi
+                <output id="amountOut">20 000 000 so'm</output>
+                <input type="range" id="amount" min="5000000" max="100000000" step="1000000" value="20000000">
+              </label>
+              <label>Muddati
+                <output id="termOut">24 oy</output>
+                <input type="range" id="term" min="6" max="60" step="6" value="24">
+              </label>
+              <label>Yillik foiz stavkasi
+                <output id="rateOut">14%</output>
+                <input type="range" id="rate" min="0" max="28" step="1" value="14">
+              </label>
+              <div class="calc__result">
+                <div><span>Oylik to'lov</span><strong id="monthly">—</strong></div>
+                <div><span>Jami qaytariladi</span><strong id="total">—</strong></div>
+                <div><span>Ustama foiz</span><strong id="overpay">—</strong></div>
+              </div>
+              <p class="note">Annuitet usulida taxminiy hisob. Aniq shartlar bank tomonidan arizangiz ko'rib chiqilgach beriladi.</p>
+            </form>
+          </div>
+        </div>
+
+        <!-- Darslar -->
+        <div class="panel" role="tabpanel" id="p-dars" aria-labelledby="t-dars" hidden>
+          <ul class="courses" id="courses"></ul>
+        </div>
+
+        <!-- Grantlar -->
+        <div class="panel" role="tabpanel" id="p-grant" aria-labelledby="t-grant" hidden>
+          <ul class="grants" id="grants"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENTORLAR -->
+    <section class="section section--indigo" id="mentorlar">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Mentorlar</h2>
+          <p>Har bir sotuvchi oyiga bitta 40 daqiqalik bepul konsultatsiya oladi. Video qo'ng'iroq yoki Qarshidagi ofisda.</p>
+        </div>
+        <div class="mentors" id="mentors"></div>
+
+        <form class="booking" id="booking" novalidate>
+          <h3>Konsultatsiyaga yozilish</h3>
+          <div class="booking__grid">
+            <label>Mentor
+              <select name="mentor" id="bMentor" required></select>
+            </label>
+            <label>Ismingiz
+              <input name="name" required autocomplete="name" placeholder="Dilnoza Rahimova">
+            </label>
+            <label>Telefon
+              <input name="phone" required inputmode="tel" autocomplete="tel" placeholder="+998 90 123 45 67">
+            </label>
+            <label>Sana
+              <input type="date" name="date" id="bDate" required>
+            </label>
+          </div>
+          <fieldset class="slots">
+            <legend>Vaqt</legend>
+            <div id="slots"></div>
+          </fieldset>
+          <label>Qaysi masala bo'yicha?
+            <textarea name="topic" rows="3" placeholder="Masalan: Instagram sahifamga obunachilar kelmayapti, nimadan boshlay?"></textarea>
+          </label>
+          <p class="form-msg" id="bookingMsg" role="status"></p>
+          <button class="btn btn--saffron" type="submit">Konsultatsiyaga yozilish</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- SOTUVCHI -->
+    <section class="section" id="sotuvchi">
+      <div class="wrap seller">
+        <div class="seller__info">
+          <h2>Sotuvchi bo'lish</h2>
+          <p>Do'kon ochish uchun ijara ham, sayt ham kerak emas. Telefon bilan mahsulotingizni suratga olsangiz yetarli.</p>
+          <ol class="steps">
+            <li><b>Ariza qoldiring.</b> Ism, telefon va nima yasashingizni yozing. Bir kun ichida qo'ng'iroq qilamiz.</li>
+            <li><b>Mahsulot sahifasini to'ldiring.</b> 3–5 ta rasm, narx va qisqa tavsif. Kerak bo'lsa, rasmni o'zimiz olib beramiz.</li>
+            <li><b>Buyurtma qabul qiling.</b> Xaridor to'laydi, kuryer buyumni uyingizdan olib ketadi, pul 3 kun ichida kartangizga tushadi.</li>
+          </ol>
+          <dl class="terms">
+            <div><dt>Komissiya</dt><dd>Birinchi 3 oy 0%, keyin har sotuvdan 7%</dd></div>
+            <div><dt>Yetkazib berish</dt><dd>Qashqadaryo bo'ylab 1–2 kun, boshqa viloyatlarga 2–4 kun</dd></div>
+            <div><dt>To'lov</dt><dd>Payme, Click, Uzcard, Humo yoki naqd</dd></div>
+          </dl>
+        </div>
+        <form class="apply" id="apply" novalidate>
+          <h3>Sotuvchi arizasi</h3>
+          <label>Ism va familiya
+            <input name="name" required autocomplete="name">
+          </label>
+          <label>Telefon raqam
+            <input name="phone" required inputmode="tel" autocomplete="tel" placeholder="+998">
+          </label>
+          <label>Shahar yoki tuman
+            <input name="city" required placeholder="Qarshi">
+          </label>
+          <label>Nima yasaysiz?
+            <select name="category" id="aCat" required></select>
+          </label>
+          <label>Qisqacha o'zingiz haqingizda
+            <textarea name="about" rows="3" placeholder="Masalan: 5 yildan beri atlasdan sumka tikaman, oyiga 20 tagacha tayyorlay olaman"></textarea>
+          </label>
+          <label class="check"><input type="checkbox" name="needFinance"> Kredit yoki grant bo'yicha ham maslahat kerak</label>
+          <p class="form-msg" id="applyMsg" role="status"></p>
+          <button class="btn btn--primary" type="submit">Arizani yuborish</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--tint" id="savollar">
+      <div class="wrap faq">
+        <h2>Ko'p beriladigan savollar</h2>
+        <div id="faq"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="ikat ikat--thin" aria-hidden="true"></div>
+    <div class="wrap foot__in">
+      <div>
+        <a class="logo logo--light" href="#top"><span class="logo__mark" aria-hidden="true"></span><span class="logo__word">Mohira</span></a>
+        <p>Hunarmand ayollar uchun onlayn bozor va qo'llab-quvvatlash markazi.</p>
+      </div>
+      <div>
+        <h4>Bo'limlar</h4>
+        <a href="#katalog">Katalog</a>
+        <a href="#moliya">Moliyalashtirish</a>
+        <a href="#mentorlar">Mentorlar</a>
+        <a href="#sotuvchi">Sotuvchi bo'lish</a>
+      </div>
+      <div>
+        <h4>Aloqa</h4>
+        <a href="tel:+998752200000">+998 75 220 00 00</a>
+        <a href="mailto:salom@mohira.uz">salom@mohira.uz</a>
+        <span>Qarshi shahri, Mustaqillik ko'chasi</span>
+      </div>
+    </div>
+    <p class="wrap foot__copy">© <span id="year"></span> Mohira. Moliyaviy takliflar namunaviy — aniq shartlar hamkor tashkilot bilan kelishiladi.</p>
+  </footer>
+
+  <!-- Mahsulot oynasi -->
+  <dialog class="modal" id="productModal" aria-labelledby="pmTitle">
+    <button class="modal__close" data-close aria-label="Yopish">×</button>
+    <div class="pm" id="pmBody"></div>
+  </dialog>
+
+  <!-- Savat -->
+  <div class="drawer-back" id="drawerBack" hidden></div>
+  <aside class="drawer" id="drawer" aria-labelledby="drawerTitle" aria-hidden="true">
+    <div class="drawer__head">
+      <h3 id="drawerTitle">Savat</h3>
+      <button class="modal__close" id="cartClose" aria-label="Savatni yopish">×</button>
+    </div>
+    <div class="drawer__body" id="cartBody"></div>
+    <div class="drawer__foot" id="cartFoot"></div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/art.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
